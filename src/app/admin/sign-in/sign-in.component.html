@@ -1,34 +1,41 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
+<div class="ui-view">
+  <div class="login-page">
+    <div class="img-container">
+      <div class="text-center float-end photo">
+        <img src="../../../assets/images/flat-avatar.png" class="user-avatar img-circle img-responsive" />
+          <h1>meraTalent<br /><small>Find talents around the world<br/> at one place</small></h1>
         </div>
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
+      </div>
+      
+      <div class="form-content">
+
+        <form role="form" class="bottom-75" ng-submit="submit()">
+        <div class="table-form">
+          <div class="form-groups">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Username/Email" #userName required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password" #userPassword required>
+            </div>
+            
+              
+          </div>	
+          <div class="button-container">
+            <button type="button" class="btn btn-default login" (click)="authService.SignIn(userName.value, userPassword.value)"><img src="../../../assets/images/arrow.png" alt=""></button>
+          </div>
         </div>
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-        <!-- Calling GoogleAuth Api from AuthService -->
-        <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Log in with Google
+        <div class="remember">
+          <button type="button" class="btn googleBtn pointer" (click)="authService.GoogleAuth()">
+            
+           <span class="text-white"> Log in with <i class="bi bi-google text-orange"></i>oogle</span>
           </button>
+          <span class="pass mt-2 pointer" routerLink="/forgot-password"> forgot password?</span>
+        </div>			
+        </form>
+        <div class="pro-link fw-bold">
+          <span>Don't have an account?<span class="redirect pointer" routerLink="/register-user"> Sign <span class="text-orange">U</span>p</span></span>
         </div>
-        <div class="forgotPassword">
-          <span routerLink="/forgot-password">Forgot Password?</span>
-        </div>
-      </div>
-      <div class="redirectToLogin">
-        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-      </div>
+      </div>			
     </div>
-  </div>
-  
+</div>

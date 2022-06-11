@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase:{
+  firebase: {
     apiKey: "AIzaSyAY8kBLNiMOtrYA1SRNPcftKXIs166zc9w",
     authDomain: "meratalent-2c8e7.firebaseapp.com",
     databaseURL: "https://meratalent-2c8e7-default-rtdb.asia-southeast1.firebasedatabase.app",
